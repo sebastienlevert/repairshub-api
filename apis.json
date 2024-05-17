@@ -1,0 +1,22 @@
+{
+  "name": "Repairs Hub",
+  "description": "Sample Repairs Hub API",
+  "tags": [
+      "sebastienlevert",
+      "repairs",
+      "repairshub"
+  ],
+  "apis": [
+      {
+          "name": "Repairs Hub API",
+          "description": "Sample Repairs Hub API.",
+          "baseUrl": "https://piercerepairsapi.azurewebsites.net",
+          "properties": [
+              {
+                  "type": "x-openapi",
+                  "url": "openapi.yaml"
+              }
+          ]
+      }
+  ]
+}
