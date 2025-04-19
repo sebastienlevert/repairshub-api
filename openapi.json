@@ -7,7 +7,7 @@
     },
     "servers": [
         {
-            "url": "https://piercerepairsapi.azurewebsites.net/"
+            "url": "https://repairshub.azurewebsites.net/"
         }
     ],
     "paths": {
