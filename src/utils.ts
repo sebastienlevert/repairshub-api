@@ -31,7 +31,7 @@ export function registerOpenAPI() {
             version: "1.0.0"
         },
         servers: [{
-            url: process.env.BASE_URL
+            url: process.env.BASE_URL,
         }]
     }
 
