@@ -3,14 +3,12 @@ import { Repair, RepairSchema } from "../models/repair";
 import { registerFunction } from "@apvee/azure-functions-openapi";
 import { z } from "zod";
 import { RepairStore } from "../config";
-import { validateContentType } from "../utils";
 
 export async function getRepair(request: HttpRequest, context: InvocationContext): Promise<HttpResponseInit> {
     context.log(`${request.method} ${request.url}`);
 
-    const repairs: Repair[] = RepairStore.getRepairs();
-
     try {
+        const repairs: Repair[] = RepairStore.getRepairs();
         const id = parseInt(request.params.id);
         if (isNaN(id)) {
             return { jsonBody: { error: 'Invalid or missing id parameter' }, status: 400 };

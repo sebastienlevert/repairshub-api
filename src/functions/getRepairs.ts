@@ -1,14 +1,13 @@
 import { registerFunction } from "@apvee/azure-functions-openapi";
 import { HttpRequest, HttpResponseInit, InvocationContext } from "@azure/functions";
-import { validateContentType } from "../utils";
 import { RepairStore } from "../config";
 import { z } from "zod";
-import { RepairSchema } from "../models/repair";
+import { Repair, RepairSchema } from "../models/repair";
 
 export async function getRepairs(request: HttpRequest, context: InvocationContext): Promise<HttpResponseInit> {
     context.log(`${request.method} ${request.url}`);
 
-    const repairs = RepairStore.getRepairs();
+    const repairs: Repair[] = RepairStore.getRepairs();
     let assignedTo = request.query.get('assignedTo');
     let filteredRepairs = repairs;
 
