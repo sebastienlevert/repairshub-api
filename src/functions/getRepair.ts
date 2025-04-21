@@ -8,9 +8,6 @@ import { validateContentType } from "../utils";
 export async function getRepair(request: HttpRequest, context: InvocationContext): Promise<HttpResponseInit> {
     context.log(`${request.method} ${request.url}`);
 
-    const contentTypeCheck = validateContentType(request);
-    if (contentTypeCheck) return contentTypeCheck;
-
     const repairs: Repair[] = RepairStore.getRepairs();
 
     try {
@@ -47,6 +44,5 @@ registerFunction('getRepair', 'Get a repair by ID', {
         200: { description: 'Repair found', content: { 'application/json': { schema: RepairSchema } } },
         400: { description: 'Invalid request', content: { 'application/json': { schema: z.object({ error: z.string() }) } } },
         404: { description: 'Repair not found', content: { 'application/json': { schema: z.object({ error: z.string() }) } } },
-        415: { description: 'Unsupported Media Type', content: { 'application/json': { schema: z.object({ error: z.string() }) } } }
     }
 });

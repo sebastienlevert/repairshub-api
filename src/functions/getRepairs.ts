@@ -8,9 +8,6 @@ import { RepairSchema } from "../models/repair";
 export async function getRepairs(request: HttpRequest, context: InvocationContext): Promise<HttpResponseInit> {
     context.log(`${request.method} ${request.url}`);
 
-    const contentTypeCheck = validateContentType(request);
-    if (contentTypeCheck) return contentTypeCheck;
-
     const repairs = RepairStore.getRepairs();
     let assignedTo = request.query.get('assignedTo');
     let filteredRepairs = repairs;
@@ -40,6 +37,5 @@ registerFunction('getRepairs', 'Get all repairs', {
     responses: {
         200: { description: 'List of repairs', content: { 'application/json': { schema: z.array(RepairSchema) } } },
         400: { description: 'Invalid request', content: { 'application/json': { schema: z.object({ error: z.string() }) } } },
-        415: { description: 'Unsupported Media Type', content: { 'application/json': { schema: z.object({ error: z.string() }) } } }
     }
 });
