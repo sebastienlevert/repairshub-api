@@ -29,7 +29,7 @@ export async function getRepair(request: HttpRequest, context: InvocationContext
 
 registerFunction('getRepair', 'Get a repair by ID', {
     handler: getRepair,
-    route: 'repairs/{id}',
+    route: '/repairs/{id}',
     methods: ['GET'],
     authLevel: 'anonymous',
     azureFunctionRoutePrefix: '',

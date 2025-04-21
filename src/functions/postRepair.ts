@@ -35,7 +35,7 @@ export async function postRepair(request: HttpRequest, context: InvocationContex
 
 registerFunction('postRepair', 'Create a new repair', {
     handler: postRepair,
-    route: 'repairs',
+    route: '/repairs',
     methods: ['POST'],
     authLevel: 'anonymous',
     azureFunctionRoutePrefix: '',

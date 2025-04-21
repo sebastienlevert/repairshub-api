@@ -24,7 +24,7 @@ export async function getRepairs(request: HttpRequest, context: InvocationContex
 
 registerFunction('getRepairs', 'Get all repairs', {
     handler: getRepairs,
-    route: 'repairs',
+    route: '/repairs',
     methods: ['GET'],
     authLevel: 'anonymous',
     azureFunctionRoutePrefix: '',

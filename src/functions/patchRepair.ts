@@ -40,7 +40,7 @@ export async function patchRepair(request: HttpRequest, context: InvocationConte
 
 registerFunction('patchRepair', 'Update a repair by ID', {
     handler: patchRepair,
-    route: 'repairs/{id}',
+    route: '/repairs/{id}',
     methods: ['PATCH'],
     authLevel: 'anonymous',
     azureFunctionRoutePrefix: '',

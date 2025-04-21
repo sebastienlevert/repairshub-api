@@ -14,7 +14,7 @@
           "properties": [
               {
                   "type": "x-openapi",
-                  "url": "https://repairshub.azurewebsites.net/openapi.yaml"
+                  "url": "https://repairshub.azurewebsites.net/openapi.json"
               }
           ]
       }

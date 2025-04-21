@@ -39,7 +39,7 @@ export async function deleteRepair(request: HttpRequest, context: InvocationCont
 
 registerFunction('deleteRepair', 'Delete a repair by ID', {
     handler: deleteRepair,
-    route: 'repairs/{id}',
+    route: '/repairs/{id}',
     methods: ['DELETE'],
     authLevel: 'anonymous',
     azureFunctionRoutePrefix: '',
