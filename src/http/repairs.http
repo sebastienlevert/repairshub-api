@@ -1,0 +1,53 @@
+// Endpoint URL
+@local = http://localhost:7071
+@production = https://repairshub.azurewebsites.net
+@endpointUrl = {{local}}
+// Single repair ID
+@repairId = 5
+@firstName = Karin
+@lastName = Blair
+
+
+### Get repairs
+GET {{endpointUrl}}/repairs
+Content-Type: application/json
+
+### Get repairs by name
+GET {{endpointUrl}}/repairs?assignedTo={{firstName}}
+Content-Type: application/json
+
+### Get repairs by last name
+GET {{endpointUrl}}/repairs?assignedTo={{lastName}}
+Content-Type: application/json
+
+### Get repairs by full name
+GET {{endpointUrl}}/repairs?assignedTo={{firstName}} {{lastName}}
+Content-Type: application/json
+
+### Get a repair
+GET {{endpointUrl}}/repairs/{{repairId}}
+Content-Type: application/json
+
+### Create a new repair
+POST {{endpointUrl}}/repairs
+Content-Type: application/json
+
+{
+    "title": "Wheel Alignment",
+    "description": "Adjust the angles of the wheels to the car manufacturer's specifications.",
+    "assignedTo": "John Doe",
+    "date": "2023-06-01",
+    "image": "https://example.com/wheel-alignment.jpg"
+}
+
+### Update a repair
+PATCH {{endpointUrl}}/repairs/{{repairId}}
+Content-Type: application/json
+
+{
+    "title": "Engine rebuild"
+}
+
+### Delete a repair
+DELETE {{endpointUrl}}/repairs/{{repairId}}
+Content-Type: application/json
