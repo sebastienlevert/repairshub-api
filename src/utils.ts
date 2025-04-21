@@ -35,5 +35,5 @@ export function registerOpenAPI() {
         }]
     }
 
-    registerOpenAPIHandler("anonymous", openAPIConfig, "3.1.0", "yaml", 'openapi.yaml')
+    registerOpenAPIHandler("anonymous", openAPIConfig, "3.1.0", "json", 'openapi.json')
 } 
