@@ -18,7 +18,7 @@ export async function patchRepair(request: HttpRequest, context: InvocationConte
             return { jsonBody: { error: 'Invalid or missing id parameter' }, status: 400 };
         }
 
-        const data: Partial<Repair> = request.body as unknown as Repair;
+        const data: Partial<Repair> = await request.json();
         const repairIndex = repairs.findIndex(repair => repair.id === id);
 
         if (repairIndex === -1) {

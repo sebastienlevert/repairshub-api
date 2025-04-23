@@ -13,8 +13,12 @@ export async function postRepair(request: HttpRequest, context: InvocationContex
 
     try {
         const repairs: Repair[] = RepairStore.getRepairs();
-        const data: any = request.body;
+        const data: Partial<Repair> = await request.json();
     
+        if (!data) {
+            return { jsonBody: { error: 'Invalid JSON in request body' }, status: 400 };
+        }
+
         const id = repairs.length > 0 ? Math.max(...repairs.map(repair => repair.id)) + 1 : 1;
         const newRepair = { 
             id: id,
@@ -29,7 +33,7 @@ export async function postRepair(request: HttpRequest, context: InvocationContex
         return { jsonBody: newRepair, status: 201 };
     } catch (error) {
         context.log(`Error creating repair: ${error}`);
-        return { jsonBody: { error: "Invalid JSON in request body" }, status: 400 };
+        return { jsonBody: { error: "Error in creating the repair" }, status: 400 };
     }    
 };
 

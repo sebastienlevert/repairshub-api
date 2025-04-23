@@ -40,6 +40,14 @@ Content-Type: application/json
     "image": "https://example.com/wheel-alignment.jpg"
 }
 
+### Create a new repair
+POST {{endpointUrl}}/repairs
+Content-Type: application/json
+
+{
+    "title": "Wheel Alignment"
+}
+
 ### Update a repair
 PATCH {{endpointUrl}}/repairs/{{repairId}}
 Content-Type: application/json
