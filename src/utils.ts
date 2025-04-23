@@ -12,7 +12,6 @@ export function getInitialRepairs() {
 
 export function validateContentType(request: HttpRequest): HttpResponseInit | null {
     const contentType = request.headers.get("content-type")?.toLowerCase();
-    console.log(contentType);
     if (!contentType?.includes("application/json")) {
         return {
             status: 415,

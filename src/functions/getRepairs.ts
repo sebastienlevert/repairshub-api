@@ -14,7 +14,6 @@ export async function getRepairs(request: HttpRequest, context: InvocationContex
     if (assignedTo) {
         assignedTo = assignedTo.toLowerCase().trim(); 
         const nameParts = assignedTo.split(' ');
-        console.log(nameParts);
         filteredRepairs = repairs.filter(repair => repair.assignedTo?.toLowerCase().includes(nameParts[0]?.trim()) || repair.assignedTo?.toLowerCase().includes(nameParts[1]?.trim()));
     }
     

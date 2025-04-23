@@ -7,6 +7,7 @@ import { getRepair } from "../functions/getRepair";
 import { postRepair } from "../functions/postRepair";
 import { patchRepair } from "../functions/patchRepair";
 import { deleteRepair } from "../functions/deleteRepair";
+import { json } from "stream/consumers";
 
 let mockRepairs: Repair[] = RepairStore.getRepairs();
 
@@ -15,6 +16,7 @@ const createMockRequest = (params = {}, query = new Map(), body?: any): any => (
   query: query,
   params: params,
   body: body,
+  json: jest.fn().mockResolvedValue(body),
   headers: new Map([
     ['content-type', 'application/json'],
   ]),
@@ -31,6 +33,22 @@ const mockContext = {
   executionContext: { invocationId: '', functionName: '', functionDirectory: '' },
   options: {}
 } as unknown as InvocationContext;
+
+jest.mock('@azure/functions', () => {
+  const actual = jest.requireActual('@azure/functions');
+  return {
+    ...actual,
+    app: {
+      ...actual.app,
+      ...Object.keys(actual.app)
+        .filter(key => typeof actual.app[key] === 'function')
+        .reduce((obj, key) => ({
+          ...obj,
+          [key]: jest.fn()
+        }), {})
+    }
+  };
+});
 
 // Reset mocks before each test
 beforeEach(() => {
@@ -178,13 +196,30 @@ describe('Repairs API', () => {
       const request = createMockRequest({}, new Map(), newRepairData);
       
       const response = await postRepair(request, mockContext);
-      
-      console.log(response);
 
       expect(response.status).toBe(201);
       expect(response.jsonBody).toBeDefined();
       expect(response.jsonBody.id).toBe(10);
       expect(response.jsonBody.title).toBe('New Repair');
+      expect(mockContext.log).toHaveBeenCalledWith(expect.stringContaining('New repair created'));
+    });
+
+    it('should create a new partial repair and return 201 status', async () => {
+      const newRepairData = {
+        title: 'New Partial Repair'
+      };
+      
+      const request = createMockRequest({}, new Map(), newRepairData);
+      
+      const response = await postRepair(request, mockContext);
+
+      console.log(response);
+
+      expect(response.status).toBe(201);
+      expect(response.jsonBody).toBeDefined();
+      expect(response.jsonBody.id).toBe(10);
+      expect(response.jsonBody.title).toBe('New Partial Repair');
+      expect(response.jsonBody.description).toBeUndefined();
       expect(mockContext.log).toHaveBeenCalledWith(expect.stringContaining('New repair created'));
     });
 
