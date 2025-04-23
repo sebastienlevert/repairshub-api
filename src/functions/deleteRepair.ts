@@ -41,7 +41,7 @@ registerFunction('deleteRepair', 'Delete a repair by ID', {
     handler: deleteRepair,
     route: '/repairs/{id}',
     methods: ['DELETE'],
-    authLevel: 'anonymous',
+    authLevel: process.env.AUTH_LEVEL as 'anonymous' | 'function' | 'admin',
     azureFunctionRoutePrefix: '',
     request: {
         params: z.object({

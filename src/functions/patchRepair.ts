@@ -42,7 +42,7 @@ registerFunction('patchRepair', 'Update a repair by ID', {
     handler: patchRepair,
     route: '/repairs/{id}',
     methods: ['PATCH'],
-    authLevel: 'anonymous',
+    authLevel: process.env.AUTH_LEVEL as 'anonymous' | 'function' | 'admin',
     azureFunctionRoutePrefix: '',
     request: {
         params: z.object({

@@ -39,7 +39,7 @@ registerFunction('postRepair', 'Create a new repair', {
     handler: postRepair,
     route: '/repairs',
     methods: ['POST'],
-    authLevel: 'anonymous',
+    authLevel: process.env.AUTH_LEVEL as 'anonymous' | 'function' | 'admin',
     azureFunctionRoutePrefix: '',
     request: {
         body: {

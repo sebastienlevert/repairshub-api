@@ -25,7 +25,7 @@ registerFunction('getRepairs', 'Get all repairs', {
     handler: getRepairs,
     route: '/repairs',
     methods: ['GET'],
-    authLevel: 'anonymous',
+    authLevel: process.env.AUTH_LEVEL as 'anonymous' | 'function' | 'admin',
     azureFunctionRoutePrefix: '',
     request: {
         query: z.object({
