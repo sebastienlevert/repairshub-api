@@ -5,7 +5,7 @@
         "description": "Need to drain the old engine oil and replace it with fresh oil to keep the engine lubricated and running smoothly.",
         "assignedTo": "Karin Blair",
         "date": "2023-05-23",
-        "image": "https://www.howmuchisit.org/wp-content/uploads/2011/01/oil-change.jpg"
+        "image": "https://copilotdevx.blob.core.windows.net/images/01.png"
     },
     {
         "id": 2,
@@ -13,7 +13,7 @@
         "description": "Conduct brake repairs, including replacing worn brake pads, resurfacing or replacing brake rotors, and repairing or replacing other components of the brake system.",
         "assignedTo": "Issac Fielder",
         "date": "2023-05-24",
-        "image": "https://upload.wikimedia.org/wikipedia/commons/7/71/Disk_brake_dsc03680.jpg"
+        "image": "https://copilotdevx.blob.core.windows.net/images/02.png"
     },
     {
         "id": 3,
@@ -21,7 +21,7 @@
         "description": "Rotate and replace tires, moving them from one position to another on the vehicle to ensure even wear and removing worn tires and installing new ones.",
         "assignedTo": "Kat Larsson",
         "date": "2023-05-24",
-        "image": "https://th.bing.com/th/id/OIP.N64J4jmqmnbQc5dHvTm-QAHaE8?pid=ImgDet&rs=1"
+        "image": "https://copilotdevx.blob.core.windows.net/images/03.png"
     },
     {
         "id": 4,
@@ -29,7 +29,7 @@
         "description": "Remove the old battery and install a new one to ensure that the vehicle start reliably and the electrical systems function properly.",
         "assignedTo": "Ashley McCarthy",
         "date": "2023-05-25",
-        "image": "https://i.stack.imgur.com/4ftuj.jpg"
+        "image": "https://copilotdevx.blob.core.windows.net/images/04.png"
     },
     {
         "id": 5,
@@ -37,7 +37,7 @@
         "description": "This can include a variety of services such as replacing spark plugs, air filters, and fuel filters to keep the engine running smoothly and efficiently.",
         "assignedTo": "Cecil Folk",
         "date": "2023-05-28",
-        "image": "https://th.bing.com/th/id/R.e4c01dd9f232947e6a92beb0a36294a5?rik=P076LRx7J6Xnrg&riu=http%3a%2f%2fupload.wikimedia.org%2fwikipedia%2fcommons%2ff%2ff3%2f1990_300zx_engine.jpg&ehk=f8KyT78eO3b%2fBiXzh6BZr7ze7f56TWgPST%2bY%2f%2bHqhXQ%3d&risl=&pid=ImgRaw&r=0"
+        "image": "https://copilotdevx.blob.core.windows.net/images/05.png"
     },
     {
         "id": 6,
@@ -45,7 +45,7 @@
         "description": "This can include repairing or replacing components of the suspension and steering systems to ensure that the vehicle handles and rides smoothly.",
         "assignedTo": "Daisy Phillips",
         "date": "2023-05-29",
-        "image": "https://i.stack.imgur.com/4v5OI.jpg"
+        "image": "https://copilotdevx.blob.core.windows.net/images/06.png"
     },
     {
         "id": 7,
@@ -53,7 +53,7 @@
         "description": "This can include repairing or replacing components of the exhaust system to ensure that the vehicle runs efficiently and meets emissions standards.",
         "assignedTo": "Karin Blair",
         "date": "2023-05-30",
-        "image": "https://i.stack.imgur.com/4v5OI.jpg"
+        "image": "https://copilotdevx.blob.core.windows.net/images/07.png"
     },
     {
         "id": 8,
@@ -61,7 +61,7 @@
         "description": "This can include changing the transmission fluid, replacing the filter, and checking for leaks to ensure that the transmission operates smoothly.",
         "assignedTo": "Issac Fielder",
         "date": "2023-05-31",
-        "image": "https://i.stack.imgur.com/4v5OI.jpg"
+        "image": "https://copilotdevx.blob.core.windows.net/images/08.png"
     },
     {
         "id": 9,
@@ -69,6 +69,6 @@
         "description": "This can include recharging the refrigerant, checking for leaks, and replacing components of the air conditioning system to ensure that it works properly.",
         "assignedTo": "Kat Larsson",
         "date": "2023-06-01",
-        "image": "https://i.stack.imgur.com/4v5OI.jpg"
+        "image": "https://copilotdevx.blob.core.windows.net/images/09.png"
     }
 ]
